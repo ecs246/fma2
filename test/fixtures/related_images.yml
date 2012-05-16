@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  vendor_id: 1
+  image_id: 1
+  rank: 1
+  alt_title: MyString
+  alt_description: MyText
+
+two:
+  vendor_id: 1
+  image_id: 1
+  rank: 1
+  alt_title: MyString
+  alt_description: MyText

@@ -1,0 +1,46 @@
+<h1>New category</h1>
+
+<div class="category wrap">
+  <div class="left">
+    <%= render :partial=>'form' ,:locals=>{:remote=>true,:format=>'json'}%>
+    <%= link_to 'Back', admin_categories_path %>
+
+  </div>
+  <div class="right">
+    <form id="index-form">
+    <table id="map">
+      <tr id="tag-">
+        <th>
+          Name
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+           Id
+        </th>
+        
+      </tr>
+     <%=loop_all_categories do |category,level| %>
+        <%= render :partial => "item", :locals => { :level => level, :category=>category } %>
+     <%end%>  
+  
+    </table>
+    </form>  
+  </div>
+</div>
+
+    <form class="hidden" id="quick-edit-form">
+      <table>
+      <tr class="inline-edit">
+        <td colspan="3">
+          <label for="category_name">Name</label><input type="text" name="category_name">
+          <br/>
+          <label for="category_short_description">Short Description</label><input type="text" name="category_short_description">
+          <br />
+          <input type="button" value="Cancel"> <input type="button" value="Submit">
+        </td> 
+      </tr>
+      </table>
+    </form>  
+

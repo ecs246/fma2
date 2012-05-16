@@ -1,0 +1,32 @@
+<h1>Listing Recent Flickered Image</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @flick.doc.elements.each('rsp/photos/photo') do |image| %>
+
+  <tr>
+    <td><img src="<%= image.attributes['url_t'] %>"/></td>
+    <td><%=image.attributes['title']%></td>
+    <td><form class="image-utility-form" action="/admin/images.json" data-remote="true" method="post">
+       Name <input type="text" name="image[name]"/>
+       Short Description <input type="text" name="image[short_description]"/>
+       <input type="hidden" name="image[url]" value="<%=image.attributes['url_l']%>"/>
+       <input type="hidden" name="image[thumbnail]" value="<%=image.attributes['url_t']%>"/>
+
+       <input type="submit" value="Add to Image Index"/>
+      </form>
+    </td>
+
+</td>
+  </tr>
+<% end %>
+ 
+</table>
+
+<br />
+

@@ -1,0 +1,32 @@
+<h1>Listing vendors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Short description</th>
+    <th>Description</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.name %></td>
+    <td><%= vendor.short_description %></td>
+    <td><%= vendor.description %></td>
+    <td><%= vendor.url %></td>
+    <td><%= link_to 'Show', [:admin,vendor] %></td>
+    <td><%= link_to 'Edit', edit_admin_vendor_path(vendor) %></td>
+    <td><%= link_to 'Destroy', [:admin,vendor], :confirm => 'Are you sure?', :method => :delete %>   
+
+
+</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vendor', new_admin_vendor_path %>

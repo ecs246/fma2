@@ -1,0 +1,22 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<li>
+  <img class="related-img" src="<%=related.image.thumbnail%>" />
+  <div class="related-input">
+    <%=f.hidden_field :_destroy%>
+    <%=f.hidden_field :id%>
+    <%=f.hidden_field :image_id%>
+    <%=f.hidden_field :rank%>
+    <%= f.label :alt_title,'Title' %><br />
+    <%= f.text_field :alt_title %>
+    <%= f.label :alt_description,'Caption' %><br />
+    <%= f.text_field :alt_description %>
+
+  </div>
+  <a href="#" class="image-delete">Delete</a>
+  <div class="clear">
+  </div>
+</li>
+

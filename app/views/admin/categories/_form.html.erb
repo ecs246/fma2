@@ -1,0 +1,36 @@
+<%= form_for(["admin",@category],:remote => remote,:format => format,:html=>{:id => 'create_category_form'}) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="validation-error">
+  </div>  
+  <div class="field"> 
+    <%= f.label :parent %> <br/>
+
+
+    <%= f.select(:parent_id,options_for_select(@parent_categories_options,@default_parent_option))%>
+      <!--%=get_cat_opt%-->
+  
+  </div> 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description %><br />
+    <%= f.text_field :short_description %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

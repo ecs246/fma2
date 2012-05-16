@@ -1,0 +1,18 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<li>
+  <img class="related-img" src="<%=related.image.thumbnail%>" />
+  <div class="related-input">
+      <input type="hidden" name="vendor[related_images][][image_id]" value="<%=related.id%>"/>  
+
+  Title <br/><input size="50" type="text" value="<%=related.alt_title%>" name="vendor[related_images][][alt_title]"/>
+  <br/>
+  Caption <br> <input size="50" type="text" value="<%=related.alt_description%>" name="vendor[related_images][][alt_text]"/>
+  </div>
+  <div class="clear">
+  </div>
+</li>
+

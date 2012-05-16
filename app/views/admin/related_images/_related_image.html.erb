@@ -1,0 +1,20 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<li>
+  <img class="related-img" src="<%=related.image.thumbnail%>" />
+  <div class="related-input">
+    <input type="hidden" name="vendor[related_images_attributes][][_destroy]" value=""/>  
+    <input type="hidden" name="vendor[related_images_attributes][][id]" value="<%=related.id%>"/>  
+    <input type="hidden" name="vendor[related_images_attributes][][image_id]" value="<%=related.image_id%>"/>  
+    <input type="hidden" name="vendor[related_images_attributes][][rank]" value="<%=related.rank%>"/>  
+  Title <br/><input size="50" type="text" value="<%=related.alt_title%>" name="vendor[related_images_attributes][][alt_title]"/>
+  <br/>
+  Caption <br> <input size="50" type="text" value="<%=related.alt_description%>" name="vendor[related_images_attributes][][alt_description]"/>
+  </div>
+  <a href="#" class="image-delete">Delete</a>
+  <div class="clear">
+  </div>
+</li>
+
